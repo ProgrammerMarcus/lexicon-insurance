@@ -1,0 +1,31 @@
+:root {
+    --orange: #F17949;
+    --juice: #FAB131;
+    --morning: #C7DDEA;
+    --dirt: #A9A19E;
+}
+
+body {
+    margin: 0;
+}
+
+#home {
+
+    height: calc(100lvw - 100lvh);
+
+    > article {
+        display: grid;
+        grid-template: 1fr 1fr / 1fr 1fr 1fr;
+
+        > article.fill:first-child {
+            grid-row: 2 span;
+        }
+
+    }
+
+}
+
+.fill {
+    border: 1px solid orange;
+    background-color: blanchedalmond;
+}
