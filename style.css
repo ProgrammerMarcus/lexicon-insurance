@@ -6,7 +6,7 @@
     --dust: #ebebeb;
     --chocolate: #793d24;
     --sea: #50585e;
-    --reaper: rgb(0, 0, 0, 0.5);
+    --reaper: rgb(0, 0, 0, 0.55);
 }
 
 @font-face {
@@ -111,7 +111,7 @@ a.btn {
 
             > h1 {
                 font-size: 3.5rem;
-                line-height: calc(4rem + 3px);
+                line-height: calc(3.5rem + 3px);
                 margin: auto auto 0 0;
                 text-wrap: nowrap;
                 font-variation-settings: "wght" 900;
@@ -120,7 +120,7 @@ a.btn {
                 font-size: 1.2rem;
                 line-height: calc(1.2rem + 15px);
                 text-wrap: nowrap;
-                color: var(--sea);
+                color: var(--reaper);
                 align-self: center;
                 > strong {
                     color: white;
@@ -130,6 +130,9 @@ a.btn {
 
             > a.btn {
                 margin: 0 auto auto 0;
+                @media screen and (min-width: 850px) {
+                    margin: 7% auto auto 0;
+                }
             }
         }
 
@@ -156,6 +159,80 @@ a.btn {
             display: grid;
             place-content: center;
             place-items: center;
+        }
+    }
+
+    > main > .safety {
+        display: grid;
+        background-color: var(--dirt);
+        padding: 5%;
+
+        > h1 {
+            color: white;
+            font-size: 3.5rem;
+            line-height: calc(3.5rem + 3px);
+            margin: 7% auto 0 auto;
+        }
+
+        .btn {
+            display: none;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: calc(1.2rem + 15px);
+            color: var(--reaper);
+        }
+
+        .hover {
+            margin-top: 15%;
+            display: grid;
+            gap: 64px;
+            place-items: center;
+
+            .child {
+                background-color: white;
+                border-radius: 5px;
+                box-shadow: 0 5px 5px rgb(0, 0, 0, 0.2);
+                height: 450px;
+                width: 390px;
+                display: grid;
+                place-items: center;
+                place-content: start;
+
+                h2 {
+                    position: relative;
+                    bottom: 15px;
+                }
+
+                p {
+                    font-size: 1rem;
+                    line-height: calc(1rem + 7px);
+                    width: 80%;
+                    position: relative;
+                    bottom: 30px;
+                    text-align: center;
+                }
+
+                .color {
+                    width: 90%;
+                    height: 200px;
+                    overflow: hidden;
+                    border-radius: 5px;
+                    position: relative;
+                    bottom: 30px;
+                    img {
+                        height: 512px;
+                    }
+
+                }
+            }
+            :nth-child(1) > .color {
+                background-color: var(--morning);
+            }
+            :nth-child(2) .color {
+                background-color: var(--juice);
+            }
         }
     }
 }
