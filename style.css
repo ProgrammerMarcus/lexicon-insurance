@@ -5,6 +5,8 @@
     --dirt: #a9a19e;
     --dust: #ebebeb;
     --chocolate: #793d24;
+    --sea: #50585e;
+    --reaper: rgb(0, 0, 0, 0.5);
 }
 
 @font-face {
@@ -31,6 +33,16 @@
 
 body {
     margin: 0;
+    font-family: "Fira Sans";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Frank Ruhl Libre";
 }
 
 a.btn {
@@ -39,58 +51,111 @@ a.btn {
     text-decoration: none;
     background-color: white;
     font-weight: medium;
-    padding: 1rem 3rem;
-    border-radius: 20px;
+    padding: 1rem 4rem;
+    border-radius: 30px;
     box-shadow: 0 5px 5px rgb(0, 0, 0, 0.1);
+}
+
+.navbar {
+    min-height: 5rem;
+    display: grid;
+    grid-template-columns: repeat(4, 20%);
+    place-content: center;
+    text-align: center;
+    > a {
+        text-decoration: none;
+        font-family: "Fira Sans";
+        color: var(--dirt);
+    }
+    > a:hover {
+        color: black;
+    }
 }
 
 #home {
     display: grid;
-    grid-template-rows: 9fr 1fr;
-    height: 200lvh;
 
-    > article {
-        background-color: var(--morning);
+    .navbar {
+        background-color: var(--dust);
+    }
+
+    .navbar > a:nth-child(1) {
+        color: black;
+    }
+
+    .one-two {
         display: grid;
-        grid-template-rows: 3fr 1fr 1fr;
+        height: 180svh;
+        grid-template: 1fr 1fr 1fr 1fr / 1fr;
 
-        > article.fill {
-            p {
-                font-family: "Fira Sans";
+        @media screen and (min-width: 850px) {
+            grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+            height: 80svh;
+
+            > .square-big:first-of-type {
+                background-size: 60%;
+                background-position: bottom right;
             }
         }
 
-        > article.fill:nth-child(n + 2) {
-            p {
-                color: var(--chocolate);
+        > .square-big:nth-child(1) {
+            background: url(img/family.png) var(--morning);
+            background-repeat: no-repeat;
+            background-size: calc(37svh);
+            background-position: bottom center;
+            grid-row: 2 span;
+            display: grid;
+            grid-template: 1fr 1fr 2fr / 1fr;
+            place-items: start;
+            padding: 0 15%;
+
+            > h1 {
+                font-size: 3.5rem;
+                line-height: calc(4rem + 3px);
+                margin: auto auto 0 0;
+                text-wrap: nowrap;
+                font-variation-settings: "wght" 900;
+            }
+            > p {
+                font-size: 1.2rem;
+                line-height: calc(1.2rem + 15px);
+                text-wrap: nowrap;
+                color: var(--sea);
+                align-self: center;
+                > strong {
+                    color: white;
+                    font-weight: normal;
+                }
+            }
+
+            > a.btn {
+                margin: 0 auto auto 0;
             }
         }
 
-        > article.fill:nth-child(2) {
+        > .square-link:nth-of-type(2) {
             background-color: var(--orange);
         }
 
-        > article.fill:nth-child(3) {
+        > .square-link:nth-of-type(3) {
             background-color: var(--juice);
         }
-    }
 
-    @media only screen and (min-width: 1000px) {
-        height: 90lvh;
-
-        > article {
-            grid-template: 1fr 1fr / 1fr 1fr;
-
-            > article.fill:first-child {
-                grid-row: 2 span;
+        > :nth-child(n + 2) {
+            a {
+                font-family: "Frank Ruhl Libre";
+                text-decoration: none;
+                font-size: 2.7rem;
+                color: white;
+                font-variation-settings: "wght" 900;
             }
+            p {
+                color: var(--reaper);
+                font-weight: bold;
+            }
+            display: grid;
+            place-content: center;
+            place-items: center;
         }
     }
-}
-
-.navbar {
-    background-color: var(--dust);
-}
-
-.fill {
 }
