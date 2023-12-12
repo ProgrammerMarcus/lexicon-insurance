@@ -5,7 +5,7 @@
     --dirt: #a9a19e;
     --dust: #ebebeb;
     --chocolate: #793d24;
-    --sea: #50585e;
+    --sea: #777574;
     --reaper: rgb(0, 0, 0, 0.55);
 }
 
@@ -162,7 +162,7 @@ a.btn {
         }
     }
 
-    > main > .safety {
+    .safety {
         display: grid;
         background-color: var(--dirt);
         padding: 5%;
@@ -217,22 +217,119 @@ a.btn {
                 .color {
                     width: 90%;
                     height: 200px;
+                    padding-top: 20px;
                     overflow: hidden;
                     border-radius: 5px;
                     position: relative;
                     bottom: 30px;
+                    display: grid;
+                    place-items: center;
                     img {
-                        height: 512px;
+                        width: 150px;
                     }
 
                 }
             }
-            :nth-child(1) > .color {
+            :nth-child(1) .color {
                 background-color: var(--morning);
             }
             :nth-child(2) .color {
                 background-color: var(--juice);
             }
+            :nth-child(3) .color {
+                background-color: var(--orange);
+            }
         }
     }
+
+    .about {
+        background-color: var(--juice);
+        display: grid;
+        padding: 15%;
+
+        > h1 {
+            color: white;
+            font-size: 3.5rem;
+            line-height: calc(3.5rem + 3px);
+            margin: 0 auto 0 auto;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: calc(1.2rem + 7px);
+            color: var(--reaper);
+            text-align: center;
+        }
+    }
+
+    .squares {
+        display: grid;
+        grid-template: repeat(6, 200px) / 1fr;
+        align-items: center top;
+
+        .square {
+            text-align: center;
+            padding: 5%;
+
+            h2 {
+                margin: 0 auto 0 auto;
+                text-align: left;
+                font-size: 3rem;
+                color: var(--dirt);
+            }
+
+            p {
+                font-size: 1.3rem;
+                color: var(--reaper);
+            }
+
+        }
+
+        .square:nth-child(1) {
+            font-size: 3em;
+            background-color: var(--morning);
+
+            h1 {
+                margin: 0;
+            }
+        }
+        .square:nth-child(3) {
+            background-color: var(--dust);
+        }
+        .square:nth-child(5) {
+            background-color: var(--orange);
+        }
+    }
+
+    footer {
+        background-color: var(--sea);
+        display: grid;
+        grid-auto-rows: min-content;
+        height: 300px;
+
+        .arrow {
+            fill: var(--reaper);
+            height: 2rem;
+        }
+
+        .return {
+            text-decoration: none;
+            color: var(--reaper);
+            background-color: var(--dirt);
+            text-align: center;
+            font-size: 1.4rem;
+            padding: 0.5rem 0 2rem 0;
+            line-height: 1.4rem;
+        }
+
+        @media screen and (max-width: 850px) {
+            .return {
+                display: none;
+            }
+        }
+
+        
+
+    }
+
 }
