@@ -92,7 +92,7 @@ a.btn {
         height: 180svh;
         grid-template: 1fr 1fr 1fr 1fr / 1fr;
 
-        @media screen and (min-width: 1220px) {
+        @media screen and (min-width: 1530px) {
             grid-template: repeat(2, 1fr) / repeat(2, 1fr);
             height: 80svh;
 
@@ -134,17 +134,17 @@ a.btn {
 
             > a.btn {
                 margin: 0 auto auto 0;
-                @media screen and (min-width: 1220px) {
+                @media screen and (min-width: 1530px) {
                     margin: 7% auto auto 0;
                 }
             }
         }
 
-        > .square-link:nth-of-type(2) {
+        > .square-link:nth-of-type(1) {
             background-color: var(--orange);
         }
 
-        > .square-link:nth-of-type(3) {
+        > .square-link:nth-of-type(2) {
             background-color: var(--juice);
         }
 
@@ -181,7 +181,7 @@ a.btn {
         .btn {
             display: none;
         }
-        @media screen and (min-width: 1220px) {
+        @media screen and (min-width: 1530px) {
             
             grid-template: 40% auto 1fr / repeat(6, 1fr);
             padding: 10% max(calc((100lvw - 1400px)/2), 10%);
@@ -230,7 +230,7 @@ a.btn {
             display: grid;
             gap: 64px;
             place-items: center;
-            @media screen and (min-width: 1220px) {
+            @media screen and (min-width: 1530px) {
                 gap: 40px;
                 margin-bottom: -225px;
                 grid-auto-flow: column;
@@ -295,14 +295,19 @@ a.btn {
     .about {
         background-color: var(--juice);
         display: grid;
-        padding: 15%;
+        padding: 5% 15% 20% 15%;
+        @media screen and (min-width: 1530px) {
+            margin: 10% auto 0 auto;
+        }
         place-items: center;
 
         > h1 {
             color: white;
             font-size: 3.5rem;
             line-height: calc(3.5rem + 3px);
-            margin: 0 auto 0 auto;
+            @media screen and (min-width: 1530px) {
+                margin: 10% auto 0 auto;
+            }
         }
 
         p {
@@ -310,7 +315,7 @@ a.btn {
             line-height: calc(1.2rem + 7px);
             color: var(--reaper);
             text-align: center;
-            @media screen and (min-width: 1220px) {
+            @media screen and (min-width: 1530px) {
                 max-width: 50%;
             }
         }
@@ -318,7 +323,7 @@ a.btn {
 
     .squares {
         display: grid;
-        @media screen and (min-width: 1220px) {
+        @media screen and (min-width: 1530px) {
             grid-template: repeat(2, 1fr) / repeat(3, 1fr);
         }
 
@@ -326,7 +331,11 @@ a.btn {
             position: relative;
             text-align: center;
             padding: 25px;
-            aspect-ratio: 1;
+            height: 200px;
+            @media screen and (min-width: 1530px) {
+                height: unset !important;
+                aspect-ratio: 1;
+            }
             display: grid;
             place-items: center;
             
@@ -385,7 +394,7 @@ a.btn {
             line-height: 1.4rem;
         }
 
-        @media screen and (max-width: 1220px) {
+        @media screen and (max-width: 1530px) {
             .return {
                 display: none;
             }
@@ -395,4 +404,38 @@ a.btn {
 
     }
 
+}
+
+#contact {
+    .square-big {
+        background: url(img/man-baby.png) var(--morning);
+        background-repeat: no-repeat;
+        background-size: 60%;
+        background-position: bottom right 15px;
+        display: grid;
+        place-items: center left;
+        aspect-ratio: 1;
+        h1 {
+            margin-left: 5%;
+            font-size: 3.5rem;
+            width: 50%;
+            font-variation-settings: "wght" 900;
+        }
+    }
+
+    .navbar {
+        grid-template: 1fr 1fr / 1fr 1fr;
+        min-height: 8rem;
+        > a {
+            padding: 30px;
+        }
+        > a:nth-child(4) {
+            background-color: var(--dust);
+            color: black;
+        }
+    }
+
+    footer {
+        display: none;
+    }
 }
