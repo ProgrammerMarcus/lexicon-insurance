@@ -7,6 +7,9 @@
     --chocolate: #793d24;
     --sea: #777574;
     --reaper: rgb(0, 0, 0, 0.55);
+    @media screen and (max-width: 420px) {
+        font-size: 0.8rem;
+    }
 }
 
 @font-face {
@@ -34,6 +37,7 @@
 body {
     margin: 0;
     font-family: "Fira Sans";
+
 }
 
 h1,
@@ -88,7 +92,7 @@ a.btn {
         height: 180svh;
         grid-template: 1fr 1fr 1fr 1fr / 1fr;
 
-        @media screen and (min-width: 850px) {
+        @media screen and (min-width: 1220px) {
             grid-template: repeat(2, 1fr) / repeat(2, 1fr);
             height: 80svh;
 
@@ -130,7 +134,7 @@ a.btn {
 
             > a.btn {
                 margin: 0 auto auto 0;
-                @media screen and (min-width: 850px) {
+                @media screen and (min-width: 1220px) {
                     margin: 7% auto auto 0;
                 }
             }
@@ -177,25 +181,71 @@ a.btn {
         .btn {
             display: none;
         }
+        @media screen and (min-width: 1220px) {
+            
+            grid-template: 40% auto 1fr / repeat(6, 1fr);
+            padding: 10% max(calc((100lvw - 1400px)/2), 10%);
+
+            > h1 {
+                grid-column: 3 span;
+                order: 1;
+                max-width: 400px;
+                margin: 0;
+            }
+
+            > .btn {
+                display: inline-block;
+                grid-column: 2 span;
+                order: 3;
+                margin: 0 auto auto 0;
+            }
+
+            > p {
+                grid-column: 5 / 7;
+                grid-row: 2 span;
+                order: 2;
+            }
+
+            .hover {
+                grid-column: 6 span;
+                order: 4;
+                justify-content: space-between !important;
+                margin-bottom: -400px !important;
+            }
+
+        }
 
         p {
             font-size: 1.2rem;
             line-height: calc(1.2rem + 15px);
             color: var(--reaper);
+            @media screen and (max-width: 420px) {
+                max-width: 90%;
+            }
         }
+
 
         .hover {
             margin-top: 15%;
             display: grid;
             gap: 64px;
             place-items: center;
+            @media screen and (min-width: 1220px) {
+                gap: 40px;
+                margin-bottom: -225px;
+                grid-auto-flow: column;
+                place-content: center;
+            }
 
             .child {
                 background-color: white;
                 border-radius: 5px;
                 box-shadow: 0 5px 5px rgb(0, 0, 0, 0.2);
                 height: 450px;
-                width: 390px;
+                width: 380px;
+                @media screen and (max-width: 420px) {
+                    width: 95%;
+                }
                 display: grid;
                 place-items: center;
                 place-content: start;
@@ -246,6 +296,7 @@ a.btn {
         background-color: var(--juice);
         display: grid;
         padding: 15%;
+        place-items: center;
 
         > h1 {
             color: white;
@@ -259,28 +310,40 @@ a.btn {
             line-height: calc(1.2rem + 7px);
             color: var(--reaper);
             text-align: center;
+            @media screen and (min-width: 1220px) {
+                max-width: 50%;
+            }
         }
     }
 
     .squares {
         display: grid;
-        grid-template: repeat(6, 200px) / 1fr;
-        align-items: center top;
+        @media screen and (min-width: 1220px) {
+            grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+        }
 
         .square {
+            position: relative;
             text-align: center;
-            padding: 5%;
-
+            padding: 25px;
+            aspect-ratio: 1;
+            display: grid;
+            place-items: center;
+            
             h2 {
-                margin: 0 auto 0 auto;
+                position: absolute;
+                top: 5%;
+                left: 5%;
                 text-align: left;
                 font-size: 3rem;
                 color: var(--dirt);
+                margin: 0;
             }
 
             p {
                 font-size: 1.3rem;
                 color: var(--reaper);
+                width: 80%;
             }
 
         }
@@ -305,7 +368,7 @@ a.btn {
         background-color: var(--sea);
         display: grid;
         grid-auto-rows: min-content;
-        height: 300px;
+        height: 500px;
 
         .arrow {
             fill: var(--reaper);
@@ -322,7 +385,7 @@ a.btn {
             line-height: 1.4rem;
         }
 
-        @media screen and (max-width: 850px) {
+        @media screen and (max-width: 1220px) {
             .return {
                 display: none;
             }
